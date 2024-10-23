@@ -3,6 +3,7 @@ const optionButtonsElement = document.getElementById('option-buttons')
 
 let state = {}
 
+
 function startGame() {
   state = {}
   showTextNode(1)
@@ -30,6 +31,7 @@ function showOption(option) {
   return option.requiredState == null || option.requiredState(state)
 }
 
+
 function selectOption(option) {
   const nextTextNodeId = option.nextText
   if (nextTextNodeId <= 0) {
@@ -42,154 +44,167 @@ function selectOption(option) {
 const textNodes = [
   {
     id: 1,
-    text: 'You wake up in a strange place and you see a jar of blue goo near you.',
+    text: "In the year 34xb4.910, in the city of Odegard-Martinelli, something awakens in the dark...",
     options: [
-      {
-        text: 'Take the goo',
-        setState: { blueGoo: true },
-        nextText: 2
-      },
-      {
-        text: 'Leave the goo',
-        nextText: 2
-      }
+        {
+            text: "*Sleepy* I dont wanna wake up...",
+            setState: {awakenedClone: false},
+            nextText: 3,
+        },
+        {
+            text: "*Wakeful* What's going on? Where am I?",
+            setState: {awakenedClone: false},
+            nextText: 2,
+        },
     ]
-  },
-  {
+},
+{
     id: 2,
-    text: 'You venture forth in search of answers to where you are when you come across a merchant.',
+    text: "You don't know who or what you are, but you do know that you are brand new. You float in an empty void, a place you've never been. But then, you've never been anywhere.",
     options: [
-      {
-        text: 'Trade the goo for a sword',
-        requiredState: (currentState) => currentState.blueGoo,
-        setState: { blueGoo: false, sword: true },
-        nextText: 3
-      },
-      {
-        text: 'Trade the goo for a shield',
-        requiredState: (currentState) => currentState.blueGoo,
-        setState: { blueGoo: false, shield: true },
-        nextText: 3
-      },
-      {
-        text: 'Ignore the merchant',
-        nextText: 3
-      }
+        {
+            text: "C'mon already, lets go!",
+            setState: {awakenedClone: false},
+            nextText: 4,
+        },
+        {
+            text: "Leave me be! I don't want to wake up!",
+            setState: {awakenedClone: false},
+            nextText: 3,
+        },
     ]
-  },
-  {
+},
+{
     id: 3,
-    text: 'After leaving the merchant you start to feel tired and stumble upon a small town next to a dangerous looking castle.',
+    text: "You're not up for this, whatever this is. Whatever you are. You don't know who or what you are, but you know that you are brand new. You float in an empty void, a place you've never been. But then, you've never been anywhere.",
     options: [
-      {
-        text: 'Explore the castle',
-        nextText: 4
-      },
-      {
-        text: 'Find a room to sleep at in the town',
-        nextText: 5
-      },
-      {
-        text: 'Find some hay in a stable to sleep in',
-        nextText: 6
-      }
+        {
+            text: "You try and disappear, to be nothing like you were not long ago.",
+            setState: {awakenedClone: false},
+            nextText: 4,
+        },
+        {
+            text: "I suppose this isn't too bad...",
+            setState: {awakenedClone: false},
+            nextText: 4,
+        },
     ]
-  },
-  {
+},
+{
     id: 4,
-    text: 'You are so tired that you fall asleep while exploring the castle and are killed by some terrible monster in your sleep.',
+    text: "You hear voices. No, one voice talking to itself. You reach out and find the void's edge is close by indeed. You get the feeling those voices aren't far but you can't see a thing.",
     options: [
-      {
-        text: 'Restart',
-        nextText: -1
-      }
+        {
+            text: "Where am I?",
+            setState: {awakenedClone: false},
+            nextText: 5,
+        },
+        {
+            text: "Leave me be! I don't want to wake up!",
+            setState: {awakenedClone: false},
+            nextText: 5,
+        },
     ]
-  },
-  {
+},
+{
     id: 5,
-    text: 'Without any money to buy a room you break into the nearest inn and fall asleep. After a few hours of sleep the owner of the inn finds you and has the town guard lock you in a cell.',
+    text: "The voices get closer then stop, then get closer again. They are just outside of your... container.",
     options: [
-      {
-        text: 'Restart',
-        nextText: -1
-      }
+        {
+            text: "Yo yo, let me out! I want answers!",
+            setState: {awakenedClone: false},
+            nextText: 6,
+        },
+        {
+            text: "Begone! I don't want to wake up!",
+            setState: {awakenedClone: false},
+            nextText: 6,
+        },
     ]
-  },
-  {
+},
+{
     id: 6,
-    text: 'You wake up well rested and full of energy ready to explore the nearby castle.',
+    text: "Black turns to white as your whole world cracks in two. You take a moment to adjust to the brightness... Standing before you are two creatures. They speak to each other in identical voices and then turn to you and one of them speaks: 'Awaken, clone!'",
     options: [
-      {
-        text: 'Explore the castle',
-        nextText: 7
-      }
+        {
+            text: "Clone? You understand their language but wonder what they mean.",
+            setState: {awakenedClone: true},
+            nextText: 7,
+        },
+        {
+            text: "A clone, of course. Your inbuilt genetic edumation comes flooding to you.",
+            setState: {awakenedClone: true},
+            nextText: 7,
+        },
     ]
-  },
-  {
+},
+{
     id: 7,
-    text: 'While exploring the castle you come across a horrible monster in your path.',
+    text: "Clone LNTWOS-4. Regurge now your name and purpose?",
     options: [
-      {
-        text: 'Try to run',
-        nextText: 8
-      },
-      {
-        text: 'Attack it with your sword',
-        requiredState: (currentState) => currentState.sword,
-        nextText: 9
-      },
-      {
-        text: 'Hide behind your shield',
-        requiredState: (currentState) => currentState.shield,
-        nextText: 10
-      },
-      {
-        text: 'Throw the blue goo at it',
-        requiredState: (currentState) => currentState.blueGoo,
-        nextText: 11
-      }
+        {
+            text: "You understand them but you feel shock, and you draw a blank.",
+            setState: {awakenedClone: false},
+            nextText: 8,
+        },
+        {
+            text: "Leave me be! I don't want to wake up!",
+            setState: {awakenedClone: false},
+            nextText: 8,
+        },
     ]
-  },
-  {
+},
+{
     id: 8,
-    text: 'Your attempts to run are in vain and the monster easily catches.',
+    text: "You look around desperately. You're in a sparse room full of cylinders and more of these people. You see other identicals in various stages of being awoken. You see the cylindar that held you moments ago. Attached to this is a display and you see your reflection in it... you too are one of these creatures!",
     options: [
-      {
-        text: 'Restart',
-        nextText: -1
-      }
+        {
+            text: "What is a name?? What is a clone? Who are these guys?",
+            setState: {awakenedClone: false},
+            nextText: 9,
+        },
+        {
+            text: "My name? My name? I don't know... should I?",
+            setState: {awakenedClone: false},
+            nextText: 9,
+        },
     ]
-  },
-  {
+},
+{
     id: 9,
-    text: 'You foolishly thought this monster could be slain with a single sword.',
+    text: "'Underdone!' exclaims the first of the creatures. 'Let's get them to the test area. I get the feeling this one's for the recycler.'",
     options: [
-      {
-        text: 'Restart',
-        nextText: -1
-      }
+        {
+            text: "You understand them but you feel shock, and you draw a blank.",
+            setState: {awakenedClone: false},
+            nextText: 8,
+        },
+        {
+            text: "Leave me be! I don't want to wake up!",
+            setState: {awakenedClone: false},
+            nextText: 9,
+        },
     ]
-  },
-  {
+},
+{
     id: 10,
-    text: 'The monster laughed as you hid behind your shield and ate you.',
+    text: "You are led through to another room, full of rows of chairs and terminals. You are taken to one and are sat down in front of it. Blinking at you is a user interface. Clone name input: _",
     options: [
-      {
-        text: 'Restart',
-        nextText: -1
-      }
+        {
+            text: "You understand them but you feel shock, and you draw a blank.",
+            setState: {awakenedClone: false},
+            nextText: 8,
+        },
+        {
+            text: "Leave me be! I don't want to wake up!",
+            setState: {awakenedClone: false},
+            nextText: 9,
+        },
     ]
-  },
-  {
-    id: 11,
-    text: 'You threw your jar of goo at the monster and it exploded. After the dust settled you saw the monster was destroyed. Seeing your victory you decide to claim this castle as your and live out the rest of your days there.',
-    options: [
-      {
-        text: 'Congratulations. Play Again.',
-        nextText: -1
-      }
-    ]
-  }
+}, 
+  
+
+
 ]
 
 startGame()
