@@ -44,7 +44,7 @@ function selectOption(option) {
 const textNodes = [
   {
     id: 1,
-    text: "In the year 34xb4.910, in the city of Odegard-Martinelli, something awakens in the dark...",
+    text: "You awaken in a dark confined space. You've don't know where you are or who you are.",
     options: [
         {
             text: "*Sleepy* I dont wanna wake up...",
@@ -60,7 +60,7 @@ const textNodes = [
 },
 {
     id: 2,
-    text: "You don't know who or what you are, but you do know that you are brand new. You float in an empty void, a place you've never been. But then, you've never been anywhere.",
+    text: "You hear voices. They approach, the stop, they approach again. They're geting closer all the time.",
     options: [
         {
             text: "C'mon already, lets go!",
@@ -76,44 +76,44 @@ const textNodes = [
 },
 {
     id: 3,
-    text: "You're not up for this, whatever this is. Whatever you are. You don't know who or what you are, but you know that you are brand new. You float in an empty void, a place you've never been. But then, you've never been anywhere.",
+    text: "You hear voices. They approach, the stop, they approach again. They're geting closer all the time.",
     options: [
         {
-            text: "You try and disappear, to be nothing like you were not long ago.",
+            text: "I want to sleep!",
             setState: {awakenedClone: false},
             nextText: 4,
         },
         {
-            text: "I suppose this isn't too bad...",
+            text: "Ok, let's figure this out.",
             setState: {awakenedClone: false},
-            nextText: 4,
+            nextText: 5,
         },
     ]
 },
 {
     id: 4,
-    text: "You hear voices. No, one voice talking to itself. You reach out and find the void's edge is close by indeed. You get the feeling those voices aren't far but you can't see a thing.",
+    text: "The voices are so close now. Your container opens and light fills your eyes. You can make out two figures. They stare at you.",
     options: [
         {
-            text: "Where am I?",
+            text: "Stare back.",
             setState: {awakenedClone: false},
             nextText: 5,
         },
         {
-            text: "Leave me be! I don't want to wake up!",
+            text: "Where am I. Who are you?",
             setState: {awakenedClone: false},
-            nextText: 5,
+            nextText: 6,
         },
     ]
 },
 {
     id: 5,
-    text: "The voices get closer then stop, then get closer again. They are just outside of your... container.",
+    text: "One of the two figures outside your tank flatly speaks 'Clone LNTWOS-4. Get up and report for edumation.'",
     options: [
         {
-            text: "Yo yo, let me out! I want answers!",
+            text: "You get up",
             setState: {awakenedClone: false},
-            nextText: 6,
+            nextText: 7,
         },
         {
             text: "Begone! I don't want to wake up!",
@@ -124,63 +124,63 @@ const textNodes = [
 },
 {
     id: 6,
-    text: "Black turns to white as your whole world cracks in two. You take a moment to adjust to the brightness... Standing before you are two creatures. They speak to each other in identical voices and then turn to you and one of them speaks: 'Awaken, clone!'",
+    text: "They ignore your question. One of the two figures outside your tank flatly speaks 'Clone LNTWOS-4. Get up and report for edumation.'",
     options: [
         {
-            text: "Clone? You understand their language but wonder what they mean.",
+            text: "You get up.",
             setState: {awakenedClone: true},
             nextText: 7,
         },
         {
-            text: "A clone, of course. Your inbuilt genetic edumation comes flooding to you.",
+            text: "Begone! I don't want to wake up!",
             setState: {awakenedClone: true},
-            nextText: 7,
+            nextText: 8,
         },
     ]
 },
 {
     id: 7,
-    text: "Clone LNTWOS-4. Regurge now your name and purpose?",
+    text: "They lead you down a long hallway full of other people. Some dressed like you, some dressed like your chaperones. Everybody looks the same.",
     options: [
         {
-            text: "You understand them but you feel shock, and you draw a blank.",
+            text: "What a bunch of weirdos!",
             setState: {awakenedClone: false},
-            nextText: 8,
+            nextText: 10,
         },
         {
-            text: "Leave me be! I don't want to wake up!",
+            text: "What a bunch of cool looking dudes!",
             setState: {awakenedClone: false},
-            nextText: 8,
+            nextText: 9,
         },
     ]
 },
 {
-    id: 8,
-    text: "You look around desperately. You're in a sparse room full of cylinders and more of these people. You see other identicals in various stages of being awoken. You see the cylindar that held you moments ago. Attached to this is a display and you see your reflection in it... you too are one of these creatures!",
+    id: 8, 
+    text: "The two figures waste no time. They grab you out of the bag and manually handle you out of the room.",
     options: [
         {
-            text: "What is a name?? What is a clone? Who are these guys?",
+            text: "Try to resist",
             setState: {awakenedClone: false},
-            nextText: 9,
+            nextText: 7,
         },
         {
-            text: "My name? My name? I don't know... should I?",
+            text: "Give up, and go along with them.",
             setState: {awakenedClone: false},
-            nextText: 9,
+            nextText: 7,
         },
     ]
 },
 {
     id: 9,
-    text: "'Underdone!' exclaims the first of the creatures. 'Let's get them to the test area. I get the feeling this one's for the recycler.'",
+    text: "You are led through to another room, full of rows of chairs and terminals. You are taken to one and are sat down in front of it. Blinking at you is a user interface. Clone name input: _",
     options: [
         {
-            text: "You understand them but you feel shock, and you draw a blank.",
+            text: "",
             setState: {awakenedClone: false},
             nextText: 8,
         },
         {
-            text: "Leave me be! I don't want to wake up!",
+            text: "",
             setState: {awakenedClone: false},
             nextText: 9,
         },
@@ -191,12 +191,12 @@ const textNodes = [
     text: "You are led through to another room, full of rows of chairs and terminals. You are taken to one and are sat down in front of it. Blinking at you is a user interface. Clone name input: _",
     options: [
         {
-            text: "You understand them but you feel shock, and you draw a blank.",
+            text: "",
             setState: {awakenedClone: false},
             nextText: 8,
         },
         {
-            text: "Leave me be! I don't want to wake up!",
+            text: "",
             setState: {awakenedClone: false},
             nextText: 9,
         },
