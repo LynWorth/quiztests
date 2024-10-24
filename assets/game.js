@@ -175,14 +175,9 @@ const textNodes = [
     text: "You are led through to another room, full of rows of chairs and terminals. You are taken to one and are sat down in front of it. Blinking at you is a user interface. Clone name input: _",
     options: [
         {
-            text: "",
+            text: "I'm feeling great about this!",
             setState: {awakenedClone: false},
-            nextText: 8,
-        },
-        {
-            text: "",
-            setState: {awakenedClone: false},
-            nextText: 9,
+            nextText: ,
         },
     ]
 },
@@ -191,14 +186,9 @@ const textNodes = [
     text: "You are led through to another room, full of rows of chairs and terminals. You are taken to one and are sat down in front of it. Blinking at you is a user interface. Clone name input: _",
     options: [
         {
-            text: "",
+            text: "I'm not sure about this...",
             setState: {awakenedClone: false},
-            nextText: 8,
-        },
-        {
-            text: "",
-            setState: {awakenedClone: false},
-            nextText: 9,
+            nextText: ,
         },
     ]
 }, 
